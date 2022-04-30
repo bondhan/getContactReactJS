@@ -12,6 +12,8 @@ const AddContact = (props) => {
         }
 
         props.addContactHandler({name: contactName, email: contactEmail});
+        setEmail("")
+        setName("")
     }
 
     return (

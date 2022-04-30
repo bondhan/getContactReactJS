@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import Header from "./Header"
 import AddContact from "./AddContact"
@@ -9,7 +10,7 @@ function App() {
     const [contacts, setContacts] = useState([]);
     const [isloaded, setLoaded] = useState(false);
     const addContactHandler = (c) => {
-        setContacts([...contacts, c]);
+        setContacts([...contacts, {id: uuidv4(), ...c}]);
     }
 
     useEffect(() => {
